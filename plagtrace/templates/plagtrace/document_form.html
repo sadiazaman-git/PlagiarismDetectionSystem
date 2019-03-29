@@ -1,0 +1,49 @@
+
+{% extends 'plagtrace/base.html' %}
+{% block body %}
+    <main class="container ">
+        <h3><span class="badge purple-gradient mt-5">One to One comparison</span></h3>
+			<div class="row">
+
+                {% for content in content_file %}
+				<div class="col-md-6">
+                    {{content}}
+                </div>
+                {% endfor %}
+
+			</div>
+        <form action="{% url 'plagtrace:upload_file' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<div class="row">
+				<div class="col-md-6">
+                    <div class="md-form mt-4">
+                        <div class="file-field">
+                            <div class="btn btn-secondary btn-sm float-left">
+                                <span>Upload file</span>
+                                {{ form.file1}}
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Upload your file">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="col-md-6">
+                        <div class="md-form mt-4">
+                            <div class="file-field">
+                                <div class="btn btn-secondary btn-sm float-left">
+                                    <span>Upload file</span>
+                                    {{ form.file2}}
+                                </div>
+                                <div class="file-path-wrapper">
+                                    <input class="file-path validate" type="text" placeholder="Upload your file">
+					            </div>
+                            </div>
+                        </div>
+                    <button class="btn btn-outline-deep-purple btn-rounded waves-effect mt-5"><i class="fa fa-magic mr-1" type="submit"></i> Analyze</button>
+				</div>
+
+			</div>
+        </form>
+    </main>
+{% endblock %}

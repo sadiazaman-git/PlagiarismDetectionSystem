@@ -1,0 +1,6 @@
+'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'plagtracer',
+        'USER': 'root',
+        'PASSWORD': ' ',
+        'HOST': 'localhost',
+        'PORT': ''

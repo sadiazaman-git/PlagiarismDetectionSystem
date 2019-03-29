@@ -1,0 +1,62 @@
+{% extends 'plagtrace/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block body %}
+
+    <div class="container">
+
+	        <!--Grid row-->
+        <div class="row pt-lg-5">
+
+            <div class="col-md-7 ">
+                <div class="view overlay z-depth-1-half ">
+                    <img src="{% static 'plagtrace/images/pic.jpg' %}" class="img-fluid " alt="">
+                    <div class="mask flex-center rgba-purple-light">
+                        <p class="white-text">PlagTracer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 ">
+                <h2>Plagiarism Tracer</h2>
+                <hr>
+                <p >
+                    PlagTracer is the first free, open source tool with valuable functionality.It provides advance functionality like semantics instead of keyword based matching.
+                    it makes comparison between 2 documents and detect the plagiarism. Lets get started
+                </p>
+                <a href="{% url 'plagtrace:upload_file' %}" class="btn btn purple-gradient">GET STARTED</a>
+
+
+            </div>
+        </div>
+        <!--Section: Testimonials v.2-->
+        <section class="text-center pb-5">
+            <!--Section heading-->
+            <h1 class="font-weight-bold h1 py-5">Founder</h1>
+            <!--Section description-->
+            <div class="testimonial">
+                        <!--Avatar-->
+                        <div class="avatar mx-auto">
+                            <img src="{% static 'plagtrace/images/sadia.png' %}" class="rounded-circle img-fluid" alt="Author Image">
+                        </div>
+                        <!--Content-->
+                        <p>
+                            <i class="fa fa-quote-left"></i>
+                            I'm the founder of this website.python ,Bootstrap, NLP involves in this project.
+                            </p>
+
+                        <h4>Sadia Parveen</h4>
+                        <h6>Studied at UOS M.B.Din</h6>
+
+                        <!--Review-->
+                        <i class="fa fa-star blue-text"> </i>
+                        <i class="fa fa-star blue-text"> </i>
+                        <i class="fa fa-star blue-text"> </i>
+                        <i class="fa fa-star blue-text"> </i>
+                        <i class="fa fa-star-half-full blue-text"> </i>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}

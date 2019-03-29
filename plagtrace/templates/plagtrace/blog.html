@@ -1,0 +1,90 @@
+{% extends 'plagtrace/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+<main class="container">
+<section class="pt-5 mt-4 pb-3">
+
+    <!--Grid row-->
+    <div class="row">
+        <div class="col-md-12">
+            <!--Featured image-->
+            <div class="card card-cascade wider reverse">
+                <div class="view overlay">
+                    <img src="{% static 'plagtrace/images/Plagiarism.png'  %}" alt="Wide sample post image" class="img-fluid ml-5">
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+
+                <!--Post data-->
+                <div class="card-body text-center">
+                    <h2>
+                        <a class="font-weight-bold">Recent News.</a>
+                    </h2>
+                    <p>Written by
+                        <a>Sadia Parveen</a>, 20/04/2018</p>
+
+                    <!--Social shares-->
+                    <div class="social-counters ">
+
+                        <!--Facebook-->
+                        <a class="btn btn-fb ">
+                            <i class="fa fa-facebook left "></i>
+                            <span class="clearfix d-none d-md-inline-block">Facebook</span>
+                        </a>
+                        <span class="counter ">46</span>
+
+                        <!--Twitter-->
+                        <a class="btn btn-tw ">
+                            <i class="fa fa-twitter left "></i>
+                            <span class="clearfix d-none d-md-inline-block">Twitter</span>
+                        </a>
+                        <span class="counter ">22</span>
+
+                        <!--Google+-->
+                        <a class="btn btn-gplus ">
+                            <i class="fa fa-google-plus left "></i>
+                            <span class="clearfix d-none d-md-inline-block">Google+</span>
+                        </a>
+                        <span class="counter ">31</span>
+
+                        <!--Comments-->
+                        <a class="btn btn-default ">
+                            <i class="fa fa-comments-o left "></i>
+                            <span class="clearfix d-none d-md-inline-block">Comments</span>
+                        </a>
+                        <span class="counter ">18</span>
+
+                    </div>
+                    <!--Social shares-->
+
+                </div>
+                <!--Post data-->
+            </div>
+
+            <!--Excerpt-->
+            <div class="excerpt mt-5">
+                <p>Students can benefit from our plagiarism detection software by having their essays
+                    or assignments papers checked for any plagiarism. Many college and university students
+                    face extreme penalties for plagiarism such as failing an assignment, loss of privileges,
+                    academic probation, or even expulsion. In some cases, punishments can include lawsuits,
+                    criminal charges, and even imprisonment. Even if you commit unintentional plagiarism,
+                    it can still be viewed as plagiarism in the eyes of the law.
+                    Why risk being penalized for plagiarism when with PlagTracer.com you can be 100%
+                    sure that your writing is unique?
+                </p>
+
+                <p>PlagTracker reviewed by faculty of University of Sargodha Mandi Bahauddin Campus.
+                    Simply upload your file with supported extension like txt, docx, pptx, xlsx etc click on the button to upload.
+                    The software allowing you to scan lengthy essays –
+                    if your Assignment is longer, simply it will take more time  to scan then you have to be patience for it.</p>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+</main>
+{% endblock %}

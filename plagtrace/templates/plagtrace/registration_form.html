@@ -1,0 +1,28 @@
+{% extends 'plagtrace/base.html' %}
+
+{% block body %}
+
+    <div class="row mt-5">
+        <div class="col-md-5">
+                <!-- Material form register -->
+            <form method="post" action="">
+                {% csrf_token %}
+                <p class="h4 text-center mb-5 mt-5" >Sign up</p>
+                {% for field in form %}
+                    <div class = 'form-group'>
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <span class = "text-danger small">{{ field.errors }}</span>
+                        </div>
+
+                        <label  class="control-label col-sm-2" for="materialFormRegisterNameEx">{{ field.label_tag }}</label>
+
+                    <div class="col-sm-10">{{ field }}</div>
+                    </div>
+                {% endfor %}
+                <div class="text-center mt-5 mb-4">
+                    <button class="btn btn purple-gradient" type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

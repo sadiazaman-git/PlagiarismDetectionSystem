@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PlagirismTracer</title>
+    <!--load the path of static files -->
+     {% load staticfiles %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'plagtrace/css/bootstrap.css'%} " rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'plagtrace/css/mdb.min.css' %}" rel="stylesheet">
+
+    <!-- Your custom styles (optional) -->
+    <link href="{% static 'plagtrace/css/style.css' %}" rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link href="{% static 'plagtrace/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'plagtrace/js/map.js' %}"></script>
+</head>
+<body>
+    <header class="mb-lg-5">
+
+		<!-- Sidebar navigation -->
+			<div id="slide-out" class="side-nav fixed purple darken-4">
+			<ul class="custom-scrollbar">
+			    <!-- Logo -->
+			    <li>
+			        <div class="logo-wrapper waves-light">
+			            <a href="{% url 'plagtrace:index' %}"><img src="{% static 'plagtrace/images/lll.png' %}" class="img-fluid flex-center"></a>
+			        </div>
+			    </li>
+			    <!--/. Logo -->
+			    <!--Social-->
+			    <li>
+			        <ul class="social">
+			            <li><a href="#" class="icons-sm fb-ic"><i class="fa fa-facebook"> </i></a></li>
+			            <li><a href="#" class="icons-sm pin-ic"><i class="fa fa-pinterest"> </i></a></li>
+			            <li><a href="#" class="icons-sm gplus-ic"><i class="fa fa-google-plus"> </i></a></li>
+			            <li><a href="#" class="icons-sm tw-ic"><i class="fa fa-twitter"> </i></a></li>
+			        </ul>
+			    </li>
+			    <!--/Social-->
+			    <!--Search Form-->
+			    <li>
+			        <form class="search-form" role="search">
+			            <div class="form-group md-form mt-0 pt-1 waves-light">
+			                <input type="text" class="form-control" placeholder="Search">
+			            </div>
+			        </form>
+			    </li>
+			    <!--/.Search Form-->
+			    <!-- Side navigation links -->
+			    <li>
+			        <ul class="collapsible collapsible-accordion">
+			            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-home mr-3"></i>Home<i class="fa fa-angle-down rotate-icon"></i></a>
+			                <div class="collapsible-body">
+			                    <ul>
+			                        <li><a href="{% url 'plagtrace:index' %}" class="waves-effect">Start</a>
+			                        </li>
+
+			                    </ul>
+			                </div>
+			            </li>
+			            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-hand-pointer-o"></i>Features<i class="fa fa-angle-down rotate-icon"></i></a>
+			                <div class="collapsible-body">
+			                    <ul>
+			                        <li><a href="{% url 'plagtrace:upload_file' %}" class="waves-effect">one to one comparison</a>
+                                    </li>
+                                    <li><a href="{% url 'plagtrace:features' %}" class="waves-effect">why PlagTracer</a>
+                                    </li>
+			                    </ul>
+			                </div>
+			            </li>
+			            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-eye"></i> About<i class="fa fa-angle-down rotate-icon"></i></a>
+			                <div class="collapsible-body">
+			                    <ul>
+			                        <li><a href="{% url 'plagtrace:blog' %}" class="waves-effect">Blog</a>
+			                        </li>
+			                    </ul>
+			                </div>
+			            </li>
+			            <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope-o"></i> Contact me<i class="fa fa-angle-down rotate-icon"></i></a>
+			                <div class="collapsible-body">
+			                    <ul>
+			                        <li><a href="{% url 'plagtrace:contact_form' %}" class="waves-effect">Contact Us</a>
+                                    </li>
+                                </ul>
+
+			                </div>
+			            </li>
+			        </ul>
+			    </li>
+			    <!--/. Side navigation links -->
+			</ul>
+				<div class="sidenav-bg mask-strong"></div>
+			</div>
+			<!--/. Sidebar navigation -->
+
+			        <!-- Navbar -->
+	        <nav class="navbar fixed-top deep-purple lighten-1 navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav ">
+	            <!-- SideNav slide-out button -->
+	            <div class="float-left">
+	                <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"></i></a>
+	            </div>
+	            <!-- Breadcrumb-->
+	            <div class="breadcrumb-dn mr-auto">
+	                <p>PlagTracer</p>
+	            </div>
+	            <ul class="nav navbar-nav nav-flex-icons ml-auto">
+	                <li class="nav-item">
+	                    <a href="{% url 'plagtrace:contact_form' %}" class="nav-link"><i class="fa fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
+	                </li>
+	                <li class="nav-item">
+	                    <a href="{% url 'plagtrace:features' %}" class="nav-link"><i class="fa fa-comments-o"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
+	                </li>
+                    <li class="nav-item">
+	                    <a href="{% url 'plagtrace:register' %}" class="nav-link"><i class="fa fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Signup</span></a>
+	                </li>
+	            </ul>
+	        </nav>
+	        <!-- /.Navbar -->
+    </header>
+
+    <main class="container mt-5">
+        {% block body %}
+
+
+
+
+        {% endblock %}
+    </main>
+    		<!--Footer-->
+		<footer class="page-footer font-small deep-purple pt-4 mt-4">
+
+		    <!--Footer Links-->
+		    <div class="container text-center text-md-left">
+		        <div class="row">
+
+		            <!--First column-->
+		            <div class="col-md-6">
+		                <h5 class="text-uppercase">PlagTracer</h5>
+		                <p>Work With US And Never Compromise on Quality.</p>
+		            </div>
+		            <!--/.First column-->
+		            <div class="col-md-3 ml-auto">
+
+		                <h6 class="text-uppercase font-weight-bold">
+		                    <strong>About</strong>
+		                </h6>
+		                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+		                <ul class="list-unstyled">
+		                    <p>
+		                        <a href="{% url 'plagtrace:features' %}">WHY WE CHOOSE IT</a>
+		                    </p>
+		                    <p>
+		                        <a href="{% url 'plagtrace:index' %}">PLAGTRACER</a>
+		                    </p>
+		                    <p>
+		                        <a href="{% url 'plagtrace:blog' %}">BLOG</a>
+		                    </p>
+		                    <p>
+		                        <a href="{% url 'plagtrace:contact_form' %}">CONTACT US</a>
+		                    </p>
+		                </ul>
+		            </div>
+
+		            <!--Second column-->
+		            <div class="col-md-3">
+		                <h6 class="text-uppercase font-weight-bold">
+		                    <strong>Contact</strong>
+		                </h6>
+		                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+		                <p>
+		                    <i class="fa fa-home mr-3"></i> Mandi Bahauddin, UOS</p>
+		                <p>
+		                    <i class="fa fa-envelope mr-3"></i> PlagTracer@gmail.com</p>
+		                <p>
+		                    <i class="fa fa-phone mr-3"></i> + 0340 1602170</p>
+		                <p>
+		                    <i class="fa fa-print mr-3"></i> + 0546 9922175</p>
+		            </div>
+		            <!--/.Second column-->
+		        </div>
+		    </div>
+		    <!--/.Footer Links-->
+		    <hr>
+            <!--Call to action-->
+		    <div class="text-center py-3">
+		        <ul class="list-unstyled list-inline mb-0">
+		            <li class="list-inline-item">
+		                <h5 class="mb-1">Register for free</h5>
+		            </li>
+		            <li class="list-inline-item">
+		                <a href="{% url 'plagtrace:register' %}" class="btn btn purple-gradient" style="border-radius: 20px; ">Sign up!</a>
+		            </li>
+		        </ul>
+		    </div>
+		    <!--/.Call to action-->
+
+		    <hr>
+ <!--Social buttons-->
+             <div class="text-center">
+                  <ul class="list-unstyled list-inline">
+                      <li class="list-inline-item"><a href="https:\\www.facebook.com" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-facebook"></i></a></li>
+                      <li class="list-inline-item"><a href="https:\\www.twitter.com" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-twitter"></i></a></li>
+                      <li class="list-inline-item"><a href="https:\\www.google.com" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-google-plus"></i></a></li>
+                      <li class="list-inline-item"><a href="https:\\www.linkedin.com" class="btn-floating btn-sm rgba-white-slight mx-1"><i class="fa fa-linkedin"></i></a></li>
+                   </ul>
+              </div>
+                      <!--/.Social buttons-->
+
+		    <!--Copyright-->
+		    <div class="footer-copyright py-3 text-center">
+		        © 2018 Copyright:
+		        <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> PlagTracer.com </a>
+		    </div>
+		    <!--/.Copyright-->
+
+		</footer>
+		<!--/.Footer-->
+
+<!-- Scripts -->
+<!-- JQuery -->
+
+        <script type="text/javascript" src="{% static 'plagtrace/js/jquery-3.2.1.min.js' %}"></script>
+
+		<!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="{% static 'plagtrace/js/bootstrap.min.js' %}"></script>
+		<!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="{% static 'plagtrace/js/popper.min.js' %}"></script>
+
+		<!-- MDB core JavaScript -->
+
+		<script type="text/javascript" src="{% static 'plagtrace/js/mdb.min.js' %}"></script>
+        <script type="text/javascript">
+
+			// SideNav Button Initialization
+			// language=JQuery-CSS
+            $(".button-collapse").sideNav(
+				{
+					edge: 'left', // Choose the horizontal origin
+					closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+					});
+			// SideNav Scrollbar Initialization
+			var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+			Ps.initialize(sideNavScrollbar);
+
+		</script>
+
+</body>
+</html>

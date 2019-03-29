@@ -1,0 +1,112 @@
+{% extends 'plagtrace/base.html' %}
+
+
+{% block body %}
+
+<main class="container">
+    <!--Section: Contact v.1-->
+    <section class="py-3">
+
+			    <!--Section heading-->
+			    <h2 class="font-weight-bold text-center h1 py-5">Contact us</h2>
+			    <!--Section description-->
+			    <p class="text-center mb-5 pb-4">In Case of any query or feed back you can contact us.</p>
+
+			    <div class="row">
+
+			        <!--Grid column-->
+			        <div class="col-lg-5 mb-4">
+
+			            <!--Form with header-->
+			            <div class="card">
+
+			                <div class="card-body">
+			                    <!--Header-->
+			                    <div class="form-header purple-gradient">
+			                        <h3>
+			                            <i class="fa fa-envelope"></i> Write to us:</h3>
+			                    </div>
+
+			                    <p>Your feedback really matter.</p>
+			                    <br>
+
+			                    <!--Body-->
+                                <form method="post" action="{% url 'plagtrace:contact_form' %}">
+                                    {% csrf_token %}
+                                    {% if errorMessage %}
+                                        <p><strong class="text-danger">{{ errorMessage }}</strong></p>
+                                    {% endif %}
+
+                                    <div class="md-form">
+                                        <i class="fa fa-user prefix grey-text"></i>
+                                        {{form.username }}
+                                        <label for="form-name" id="id_username">Your name</label>
+                                    </div>
+
+                                    <div class="md-form">
+                                        <i class="fa fa-envelope prefix grey-text"></i>
+                                        {{form.password}}
+                                        <label for="form-email" id="id_password">Your Password</label>
+                                    </div>
+
+                                    <div class="md-form">
+                                        <i class="fa fa-tag prefix grey-text"></i>
+                                        {{form.subject }}
+                                        <label for="form-Subject">Subject</label>
+                                    </div>
+
+                                    <div class="md-form">
+                                        <i class="fa fa-pencil prefix grey-text"></i>
+                                        {{form.description }}
+                                        <label for="form-text">Detail Description</label>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn purple-gradient" type="submit"><i class="fa fa-user mr-2"></i>Submit</button>
+                                    </div>
+                                </form>
+
+			                </div>
+
+			            </div>
+			            <!--Form with header-->
+
+			        </div>
+			        <!--Grid column-->
+
+			        <!--Grid column-->
+			        <div class="col-lg-7">
+
+			            		            <!--Buttons-->
+			            <div class="text-center">
+			                    <a class="btn-floating purple-gradient">
+			                        <i class="fa fa-map-marker "></i>
+			                    </a>
+			                    <p>Punjab, UOS M.B.Din</p>
+			                    <p>Pakistan</p>
+
+			                    <a class="btn-floating purple-gradient">
+			                        <i class="fa fa-phone"></i>
+			                    </a>
+			                    <p>+92 3401602170</p>
+			                    <p>Mon - Fri, 8:00-22:00</p>
+
+			                    <a class="btn btn-floating purple-gradient">
+			                        <i class="fa fa-envelope"></i>
+			                    </a>
+			                    <p>PlagTrace@gmail.com</p>
+			                    <p>PlagInfo@gmail.com</p>
+			            </div>
+
+			        </div>
+			        <!--Grid column-->
+
+			    </div>
+
+    </section>
+    <!--Section: Contact v.1-->
+
+
+
+</main>
+
+{% endblock %}

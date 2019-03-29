@@ -1,0 +1,43 @@
+{% extends 'plagtrace/base.html' %}
+
+{% block body %}
+
+    <div class="row mt-5">
+        <div class="col-md-5">
+                <!-- Material form register -->
+            <form method="post" action="{% url 'plagtrace:signup' %}">
+                {% csrf_token %}
+                <p class="h4 text-center mb-5 mt-5" >Sign up</p>
+
+                <!-- Material input text -->
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    {{ form.name }}
+                    <label for="materialFormRegisterNameEx">Your name</label>
+                </div>
+
+                <!-- Material input email -->
+                <div class="md-form">
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    {{ form.email }}
+                    <label for="materialFormRegisterEmailEx">Your email</label>
+                </div>
+
+                <!-- Material input password -->
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    {{ form.password }}
+                    <label for="materialFormRegisterPasswordEx">Your password</label>
+                </div>
+
+                <div class="text-center mt-5 mb-4">
+                    <button class="btn btn purple-gradient" type="submit">Register</button>
+                </div>
+            </form>
+            <!-- Material form register -->
+
+        </div>
+    </div>
+
+
+{% endblock %}

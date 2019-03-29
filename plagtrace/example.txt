@@ -1,0 +1,42 @@
+i love python so i'm pythonly. the product produced by producers.
+the 5 rules of rdf 3 are implemented in SPARQL.
+if you want you use rdf through any language then use sparql, because rdf is a concept.
+Mr. Ayaaz is my teacher.
+Monotonic rules. one focused 35,
+mother(x,y) x is the mother of y.
+mother(safia, sadia) 
+father(x,y) x is the father of y.
+Brother(saqib, sadia)
+sister(sadia, ayesha)
+parents(x, KK)
+Now one relation represnt two person.
+mother(safia, sadia)-> parents(x, sadia)
+father(Ahmed, kk)->parents(x,kk)
+we can say that parents relation is not equal to brothers(male) relation.
+
+smjh nai i (male(kk),father(ahmed, kk),mother(samia, kk)
+not same(x,y))
+again
+male(x), father(p,x), mother(p,x), parent(p,x)
+not same(p,x) ---> brother(x,y)
+
+gender relations are not same.
+
+rule 2
+
+brother(x,p), parent(p,y)-->uncle(x,y)
+mother(x,p),parent(p,y)-->grandmother(x,y)
+loyalcustomer(x),age(x)>60 -> discount(x)
+
+variable-> x
+constant -> 60
+predicate -> loyalcustomer, > (greaterthan)
+function symbols -> age
+
+Facts
+customer id =1
+1 is loyalcustomer
+no need of conditions more.
+
+logic program:
+		limited set of combination of sets

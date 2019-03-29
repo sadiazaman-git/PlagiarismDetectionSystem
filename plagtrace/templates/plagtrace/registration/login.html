@@ -1,0 +1,29 @@
+{% extends 'plagtrace/base.html' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-5">
+            <form class="form-horizontal" name="LoginForm" action="{% url 'plagtrace:login_user' %}" method="post">
+                {% csrf_token %}
+                <p class="h4 text-center mb-5 mt-5" >Login</p>
+                {% if next %}
+                    <input type="hidden" name="next" value="{{ next }}" />
+                {% endif %}
+                <div class="md-form">
+                    <i class="fa fa-user prefix grey-text"></i>
+                    <input type="text" id="username" name="username" >
+                    <label for="materialFormRegisterNameEx">Username</label>
+                </div>
+                <div class="md-form">
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <input type="password" name="password" id="password" >
+                    <label for="materialFormRegisterPasswordEx">Password</label>
+                </div>
+                <div class="text-center mt-5 mb-4">
+                    <button class="btn btn purple-gradient" type="submit">Register</button>
+                </div>
+        </form>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+gitinit
+git status
+git add filename.extension
+git status			# again check the status
+git commit -m "Add cute story"
+git add '*.txt'			#to add many files of same type use wild card
+
+git commit -m "add all the octocat files"
+
+git log 			# to check history
+
+
+git remote add origin https://github.com/try-git/try_git.git					# use to add local repo to public repo
+
+git push -u origin master
+
+git pull -u origin master
+
+git reset octofamily/octodog.txt
+git checkout -- <target> git checkout octocat.txt
+git branch clean_up
+ git checkout clean_up
+git rm '*txt' 
+git branch clean_up
+
+frig bnd krni he
